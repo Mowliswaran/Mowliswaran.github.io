@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mowliswaran C - Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* General styles */
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Container */
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      /* Header Section */
+      header {
+        background: linear-gradient(45deg, #ff6f61, #ffb347);
+        color: white;
+        text-align: center;
+        padding: 50px 0;
+        border-radius: 0 0 50% 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .name {
+        font-size: 3em;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+      }
+
+      .contact-info a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2em;
+        transition: color 0.3s;
+      }
+
+      .contact-info a:hover {
+        color: #fff4e6;
+      }
+
+      /* About Section */
+      #about {
+        background-color: #ffffff;
+        padding: 60px 0;
+        border-top: 5px solid #ff6f61;
+      }
+
+      #about h2 {
+        text-align: center;
+        font-size: 2.2em;
+        color: #ff6f61;
+        margin-bottom: 20px;
+      }
+
+      #about p {
+        font-size: 1.1em;
+        text-align: center;
+        color: #555;
+      }
+
+      /* Education Section */
+      #education {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+      }
+
+      #education h2 {
+        text-align: center;
+        font-size: 2.2em;
+        color: #4b9f8e;
+        margin-bottom: 20px;
+      }
+
+      #education ul {
+        list-style: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #education ul li {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      #education ul li strong {
+        color: #4b9f8e;
+      }
+
+      /* Projects Section */
+      #projects {
+        background: linear-gradient(45deg, #ffb347, #ff6f61);
+        color: white;
+        padding: 60px 0;
+      }
+
+      #projects h2 {
+        text-align: center;
+        font-size: 2.2em;
+        margin-bottom: 30px;
+      }
+
+      .project {
+        background-color: #fff;
+        color: #333;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project h3 {
+        color: #ff6f61;
+        font-size: 1.6em;
+        margin-bottom: 10px;
+      }
+
+      .project:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .project p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+
+      .project span {
+        font-weight: bold;
+        color: #ff6f61;
+      }
+
+      /* Certifications Section */
+      #certifications {
+        background-color: #ffffff;
+        padding: 60px 0;
+      }
+
+      #certifications h2 {
+        text-align: center;
+        font-size: 2.2em;
+        color: #1e3b1e;
+        margin-bottom: 20px;
+      }
+
+      #certifications ul {
+        list-style: none;
+        text-align: center;
+      }
+
+      #certifications ul li {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      /* Achievements Section */
+      #achievements {
+        background-color: #f4f4f9;
+        padding: 60px 0;
+        border-top: 5px solid #ff6347;
+      }
+
+      #achievements h2 {
+        text-align: center;
+        font-size: 2.2em;
+        color: #ff6347;
+        margin-bottom: 20px;
+      }
+
+      #achievements h3 {
+        font-size: 1.6em;
+        color: #ff6347;
+        margin-bottom: 15px;
+      }
+
+      #achievements ul {
+        list-style: none;
+        text-align: center;
+      }
+
+      #achievements ul li {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      /* Skills Section */
+      #skills {
+        background: linear-gradient(45deg, #98fb98, #4e574e);
+        color: white;
+        padding: 60px 0;
+      }
+
+      #skills h2 {
+        text-align: center;
+        font-size: 2.2em;
+        margin-bottom: 30px;
+      }
+
+      #skills ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      #skills ul li {
+        font-size: 1.3em;
+        margin: 10px 20px;
+        background-color: #f1f1f1;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, background-color 0.3s;
+        color: #333;
+      }
+
+      #skills ul li:hover {
+        background-color: #ff6347;
+        transform: translateY(-5px);
+        color: white;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="name">Mowliswaran C</h1>
+        <p class="title">B.E. Electronics and Communication Engineering</p>
+        <p class="contact-info">
+          <a href="mailto:mowliswaranchinnusamy@gmail.com"
+            >mowliswaranchinnusamy@gmail.com</a
+          >
+          | <a href="tel:+916374946804">+91 6374946804</a> |
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> |
+          <a href="https://github.com" target="_blank">Github</a>
+        </p>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I'm a dedicated student pursuing my B.E. in Electronics and
+          Communication Engineering at Karpagam College of Engineering, Anna
+          University. Passionate about problem-solving, coding, and building
+          impactful projects, I actively practice Data Structures and Algorithms
+          on platforms like Leetcode and HackerRank.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <strong>Graduation:</strong> B.E. Electronics and Communication
+            Engineering, Karpagam College of Engineering, Anna University (2026)
+            | CGPA: 8.54
+          </li>
+          <li>
+            <strong>HSC:</strong> Trinity International School (2022) | 86.4%
+          </li>
+          <li>
+            <strong>SSLC:</strong> Trinity International School (2020) | 91.6%
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Key Projects</h2>
+        <div class="project">
+          <h3>Density Based Traffic Control System (Jun '24 – Aug '24)</h3>
+          <p>
+            Developed a traffic control system to manage road congestion using
+            IR sensors and a microcontroller, significantly reducing traffic in
+            high-density areas. Aimed to minimize pollution and fuel consumption
+            in busy cities.
+          </p>
+          <p><span>Technologies:</span> IR sensors, Microcontroller, Keil</p>
+        </div>
+        <div class="project">
+          <h3>Pet Adoption System (Mar '24 – Apr '24)</h3>
+          <p>
+            Built a user-friendly platform for pet adoption, encouraging
+            responsible pet ownership and reducing abandonment.
+          </p>
+          <p><span>Technologies:</span> HTML, CSS, Bootstrap, JavaScript</p>
+        </div>
+        <div class="project">
+          <h3>Hospital Website (Nov '23 – Dec '23)</h3>
+          <p>
+            Designed a hospital website with essential information, including a
+            doctor directory to facilitate online appointment booking.
+          </p>
+          <p><span>Technologies:</span> HTML, CSS</p>
+        </div>
+        <div class="project">
+          <h3>Coffee Shop Website (Jan '24 – Feb '24)</h3>
+          <p>
+            Created a simple, visually appealing coffee shop website as a
+            practice project to enhance skills in HTML and CSS.
+          </p>
+          <p><span>Technologies:</span> HTML, CSS</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Problem Solving (Basic) in HackerRank - Sep '24</li>
+          <li>Java (Basic) in HackerRank - Sep '24</li>
+          <li>SQL (Basic) in HackerRank - Sep '24</li>
+          <li>Introduction to HTML in Simplilearn - Nov '23</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <h2>Achievements</h2>
+        <h3>Technical</h3>
+        <ul>
+          <li>Awarded 50 days and 100 days badge in Leetcode</li>
+          <li>Actively practicing DSA problems</li>
+          <li>Solved 300+ problems in Leetcode</li>
+          <li>Solved 290+ problems in GeeksforGeeks</li>
+          <li>Solved 190+ problems in CodeChef</li>
+          <li>Shortlisted for the finals in Neo Codeathon coding contest</li>
+        </ul>
+        <h3>Sports</h3>
+        <ul>
+          <li>4th place in Kho-Kho Zonal tournament</li>
+          <li>1st place in Department Kho-Kho match</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Skill Set</h2>
+        <ul>
+          <li>C</li>
+          <li>Java</li>
+          <li>Problem Solving</li>
+          <li>HTML, CSS</li>
+          <li>MySQL</li>
+          <li>Bootstrap</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2024 Mowliswaran C. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
